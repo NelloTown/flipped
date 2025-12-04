@@ -1,0 +1,110 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Scheda: Sicurezza Reti</title>
+    <style>
+        body { background-color: #525659; margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; }
+        .foglioA4 { background-color: white; width: 210mm; min-height: 297mm; margin: 0 auto; padding: 10mm; box-shadow: 0 0 10px rgba(0,0,0,0.5); box-sizing: border-box; position: relative; }
+        .header-table { width: 100%; border-bottom: 1px solid black; margin-bottom: 20px; font-size: 12px; }
+        .header-table td { padding-bottom: 5px; vertical-align: bottom; }
+        .main-box { border: 3px solid black; min-height: 880px; position: relative; padding: 15px; }
+        .section-title { text-align: center; font-weight: bold; font-size: 16px; text-decoration: underline; margin-top: 15px; margin-bottom: 10px; color: #000; }
+        .sub-title { font-weight: bold; font-size: 14px; margin-top: 10px; margin-bottom: 5px; text-decoration: underline; }
+        .content-area { font-size: 13px; line-height: 1.4; text-align: justify; }
+        .image-placeholder { width: 180px; height: 120px; border: 2px dashed #999; background-color: #f0f0f0; color: #666; display: flex; align-items: center; justify-content: center; text-align: center; margin: 10px; float: right; font-size: 11px; padding: 5px; }
+        .footer-table { width: 100%; border-top: 1px solid black; margin-top: 20px; font-size: 12px; position: absolute; bottom: 10mm; left: 10mm; width: calc(100% - 20mm); }
+        ul { margin-top: 5px; margin-bottom: 10px; }
+        li { margin-bottom: 3px; }
+        @media print { body { background-color: white; margin: 0; padding: 0; } .foglioA4 { box-shadow: none; margin: 0; width: 100%; height: 100%; } }
+    </style>
+</head>
+<body>
+
+<div class="foglioA4">
+    <!-- INTESTAZIONE -->
+    <table class="header-table">
+        <tr>
+            <td align="left">Materia: SISTEMI E RETI</td>
+            <td align="right">Schede: La Sicurezza nelle Reti</td>
+        </tr>
+    </table>
+
+    <!-- TITOLO -->
+    <div style="text-align: center; font-weight: bold; font-size: 18px; margin-bottom: 5px;">
+        La Sicurezza nelle Reti & La Crittografia
+    </div>
+    <div style="text-align: center; font-size: 14px; margin-bottom: 20px;">
+        Elaborato a cura degli studenti - Basato sulle slide del Corso
+    </div>
+
+    <!-- CORPO -->
+    <div class="main-box">
+        
+        <div class="content-area">
+            <p><b>Introduzione</b><br>
+            Le reti informatiche non sono sicure per natura. Abbiamo imparato che chiunque può intercettare i dati che passano sulla rete utilizzando strumenti di analisi del traffico (packet sniffing).</p>
+
+            <div class="section-title">1. Il Problema della Sicurezza</div>
+
+            <div class="image-placeholder">
+                SPAZIO PER IMMAGINE<br>
+                (Es. Logo Wireshark o Sniffing)
+            </div>
+
+            <p>Come specificato nelle dispense, uno degli strumenti più noti per intercettare i dati è <b>Wireshark</b>. Questo crea enormi problemi di sicurezza, specialmente quando effettuiamo operazioni delicate come:</p>
+            <ul>
+                <li>Pagamenti online;</li>
+                <li>Accessi a conti bancari;</li>
+                <li>Scambio di credenziali riservate.</li>
+            </ul>
+
+            <div class="section-title">2. I Tre Obiettivi della Protezione</div>
+            <p>Per proteggere i dati mentre viaggiano in rete, devono essere garantite tre proprietà fondamentali:</p>
+            
+            <ul>
+                <li><b>Segretezza:</b> I dati devono essere visibili <u>solo</u> a chi ha il diritto di vederli (riservatezza).</li>
+                <li><b>Identità:</b> Bisogna essere sicuri che chi invia o riceve i dati sia davvero chi dice di essere (non deve essere possibile spacciarsi per un altro).</li>
+                <li><b>Autenticità:</b> I documenti non devono essere stati modificati da persone non autorizzate durante il tragitto.</li>
+            </ul>
+
+            <div class="section-title">3. La Soluzione: La Crittografia</div>
+            <p>La crittografia è la tecnica principale per ottenere queste protezioni. </p>
+            
+            <div style="border: 1px solid black; padding: 5px; background: #eee; margin: 10px 0;">
+                <b>Definizione:</b><br>
+                La crittografia è l'insieme delle tecniche che consentono di realizzare la cifratura di un testo e la decifratura di un crittogramma.
+            </div>
+
+            <p>Il processo funziona trasformando un messaggio leggibile (<b>plain text</b>) in un messaggio incomprensibile (<b>cipher text</b>) tramite un <b>algoritmo di cifratura</b>.
+            Solo chi conosce le regole (algoritmo) e il parametro segreto (chiave) può effettuare il decrittaggio e comprendere il messaggio.</p>
+
+            <div class="sub-title">Applicazioni quotidiane</div>
+            <p>Oggi la crittografia è essenziale per:</p>
+            <ul>
+                <li>Proteggere le transazioni economiche;</li>
+                <li>Garantire la privacy nelle chat private;</li>
+                <li>Identificare con certezza gli utenti in rete.</li>
+            </ul>
+
+            <br>
+            <p style="text-align:center; font-style:italic;">
+                "La crittografia serve per nascondere i messaggi e far sì che solo chi è autorizzato possa leggerli."
+            </p>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <table class="footer-table">
+        <tr>
+            <td align="left">Classe: QUINTA A Inf.</td>
+            <td align="center">Pagina 1</td>
+            <td align="right">Elaborato Studenti</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

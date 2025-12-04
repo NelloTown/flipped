@@ -1,0 +1,102 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Scheda: Cifrari e Chiavi</title>
+    <style>
+        body { background-color: #525659; margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; }
+        .foglioA4 { background-color: white; width: 210mm; min-height: 297mm; margin: 0 auto; padding: 10mm; box-shadow: 0 0 10px rgba(0,0,0,0.5); box-sizing: border-box; position: relative; }
+        .header-table { width: 100%; border-bottom: 1px solid black; margin-bottom: 20px; font-size: 12px; }
+        .header-table td { padding-bottom: 5px; vertical-align: bottom; }
+        .main-box { border: 3px solid black; min-height: 880px; position: relative; padding: 15px; }
+        .section-title { text-align: center; font-weight: bold; font-size: 16px; text-decoration: underline; margin-top: 15px; margin-bottom: 10px; color: #000; }
+        .sub-title { font-weight: bold; font-size: 14px; margin-top: 10px; margin-bottom: 5px; text-decoration: underline; }
+        .content-area { font-size: 13px; line-height: 1.4; text-align: justify; }
+        .image-placeholder { width: 150px; height: 100px; border: 2px dashed #999; background-color: #f0f0f0; color: #666; display: flex; align-items: center; justify-content: center; text-align: center; margin: 10px; float: right; font-size: 11px; padding: 5px; }
+        .footer-table { width: 100%; border-top: 1px solid black; margin-top: 20px; font-size: 12px; position: absolute; bottom: 10mm; left: 10mm; width: calc(100% - 20mm); }
+        ul { margin-top: 5px; margin-bottom: 10px; }
+        li { margin-bottom: 3px; }
+        .highlight { background-color: #FFFF00; }
+        @media print { body { background-color: white; margin: 0; padding: 0; } .foglioA4 { box-shadow: none; margin: 0; width: 100%; height: 100%; } }
+    </style>
+</head>
+<body>
+
+<div class="foglioA4">
+    <!-- INTESTAZIONE -->
+    <table class="header-table">
+        <tr>
+            <td align="left">Materia: SISTEMI E RETI</td>
+            <td align="right">Schede: Algoritmi e Chiavi</td>
+        </tr>
+    </table>
+
+    <!-- TITOLO -->
+    <div style="text-align: center; font-weight: bold; font-size: 18px; margin-bottom: 5px;">
+        Cifrari Simmetrici, Asimmetrici e DES
+    </div>
+    <div style="text-align: center; font-size: 14px; margin-bottom: 20px;">
+        Analisi dei metodi di cifratura basata sugli appunti del corso
+    </div>
+
+    <!-- CORPO -->
+    <div class="main-box">
+        <div class="content-area">
+            
+            <div class="section-title">1. Codifica vs Cifratura</div>
+            <p>È importante distinguere i due termini:</p>
+            <ul>
+                <li><b>Codifica:</b> Sostituzione di una parola con un'altra (es. parola intera).</li>
+                <li><b>Cifratura:</b> Sostituzione lettera per lettera seguendo una regola matematica.</li>
+            </ul>
+            <p>La regola di cifratura è composta da due parti fondamentali:</p>
+            <ol>
+                <li><b>L'Algoritmo:</b> Il metodo usato (es. "sostituisci con la successiva").</li>
+                <li><b>La Chiave (parametro):</b> Il valore segreto (es. "di quanto spostare").</li>
+            </ol>
+
+            <div class="section-title">2. Tipi di Crittografia</div>
+            
+            <div class="sub-title">A. Crittografia Simmetrica</div>
+            <p>Utilizza <b>una sola chiave</b> sia per cifrare che per decifrare. È veloce ma ha un problema: mittente e destinatario devono scambiarsi la chiave segreta prima di comunicare.</p>
+            <p><b>Principali Algoritmi Simmetrici (dallo schema):</b></p>
+            <ul>
+                <li><b>DES (Data Encryption Standard):</b> Sviluppato da IBM. Basato su trasposizioni e sostituzioni. Introduce l'<b>effetto valanga</b>: basta cambiare pochi bit nel messaggio per cambiare totalmente il risultato cifrato. Oggi non è più sicuro da solo.</li>
+                <li><b>3-DES (Triple DES):</b> Applica il DES tre volte con chiavi diverse. Usato nelle transazioni <b>VISA e Mastercard</b>.</li>
+                <li><b>IDEA</b> (International Data Encryption Algorithm).</li>
+                <li><b>AES</b> (Advanced Encryption Standard).</li>
+            </ul>
+
+            <div class="image-placeholder">
+                SPAZIO PER SCHEMA<br>
+                (Diagramma DES/AES dalle slide)
+            </div>
+
+            <div class="sub-title">B. Crittografia Asimmetrica</div>
+            <p>Ogni utente possiede una coppia di chiavi:</p>
+            <ul>
+                <li><b>Chiave Pubblica:</b> Nota a tutti, usata per <b>cifrare</b> il messaggio.</li>
+                <li><b>Chiave Privata:</b> Segreta e nota solo al destinatario, usata per <b>decifrare</b>.</li>
+            </ul>
+            <p>Questo sistema è la base della sicurezza moderna perché <b>non richiede lo scambio preventivo della chiave segreta</b>.</p>
+
+            <div style="border: 1px solid black; padding: 5px; margin-top: 10px; font-size: 12px;">
+                <b>Nota storica:</b> Per migliaia di anni sembrava assurdo cifrare con una chiave e decifrare con un'altra. Oggi è la norma nelle comunicazioni sicure.
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <table class="footer-table">
+        <tr>
+            <td align="left">Classe: QUINTA A Inf.</td>
+            <td align="center">Pagina 1</td>
+            <td align="right">Elaborato Studenti</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

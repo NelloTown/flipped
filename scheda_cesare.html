@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Scheda: Cifrario di Cesare</title>
+    <style>
+        /* STILE PER LA STAMPA E VISUALIZZAZIONE A4 */
+        body {
+            background-color: #525659; /* Grigio scuro sfondo app viewer */
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .foglioA4 {
+            background-color: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 10mm; /* Margini foglio */
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* INTESTAZIONE */
+        .header-table {
+            width: 100%;
+            border-bottom: 1px solid black;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+        .header-table td {
+            padding-bottom: 5px;
+            vertical-align: bottom;
+        }
+
+        /* RIQUADRO PRINCIPALE "BORDATO NERO SPESSO" */
+        .main-box {
+            border: 3px solid black;
+            min-height: 900px; /* Altezza minima, si allunga se necessario */
+            height: auto; /* Permette al contenuto di espandere il box */
+            position: relative;
+            padding-bottom: 30mm; /* Spazio per il footer quando la pagina cresce */
+        }
+
+        /* STRUTTURA INTERNA */
+        .section-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: underline;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .content-area {
+            padding: 15px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .formula-red {
+            color: red;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* SPAZIO IMMAGINI */
+        .image-placeholder {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #999;
+            background-color: #f0f0f0;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 10px auto;
+            float: right; /* Immagine a destra del testo */
+            margin-left: 20px;
+        }
+
+        /* INTERATTIVITÀ EMBEDDED */
+        .interactive-box {
+            border-top: 3px solid black; /* Linea separatrice interna */
+            border-bottom: 3px solid black;
+            background-color: #ffffe0; /* Giallino leggero per evidenziare l'area attiva */
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            width: 80%;
+            border: 1px solid black;
+            padding: 3px;
+            text-transform: uppercase;
+        }
+
+        .output-display {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            font-weight: bold;
+            color: blue;
+            background: white;
+            border: 1px solid black;
+            padding: 5px;
+            min-height: 24px;
+            display: inline-block;
+            width: 80%;
+        }
+
+        /* FOOTER */
+        .footer-table {
+            width: 100%;
+            border-top: 1px solid black;
+            margin-top: 20px;
+            font-size: 12px;
+            position: relative; /* Footer scorre con il contenuto */
+            bottom: auto;
+            left: auto;
+            width: calc(100% - 0mm);
+        }
+
+        @media print {
+            body { background-color: white; margin: 0; padding: 0; }
+            .foglioA4 { box-shadow: none; margin: 0; width: 100%; height: auto; }
+            .interactive-box { background-color: white !important; border: 1px solid black; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="foglioA4">
+
+    <!-- HEADER SIMILE AGLI SCREENSHOT -->
+    <table class="header-table">
+        <tr>
+            <td align="left">Materia: LABORATORIO DI SISTEMI E RETI</td>
+            <td align="right">Schede: Crittografia - Cifrario di Giulio Cesare</td>
+        </tr>
+    </table>
+
+    <!-- TITOLO PAGINA -->
+    <div style="text-align: center; font-weight: bold; font-size: 18px; margin-bottom: 20px; text-decoration: underline;">
+        Cifrario di Cesare: Storia, Teoria e Pratica
+    </div>
+
+    <!-- BOX PRINCIPALE -->
+    <div class="main-box">
+        
+        <!-- SEZIONE 1: TEORIA -->
+        <div class="content-area">
+            
+            <!-- Placeholder Immagine (Giulio Cesare) -->
+            <div class="image-placeholder">
+                <img src="Cesare.png" alt="Busto di Giulio Cesare" style="max-width:100%; max-height:100%; display:block; object-fit:contain;">
+            </div>
+
+            <div class="section-title">Cenni Storici e Funzionamento</div>
+            
+            <p>
+                Il <b>Cifrario di Cesare</b> è uno dei più antichi algoritmi crittografici di cui si abbia traccia storica. 
+                Utilizzato da Giulio Cesare per proteggere i messaggi segreti di importanza militare, è un cifrario 
+                a <b>sostituzione monoalfabetica</b>.
+            </p>
+            <p>
+                Il principio di funzionamento si basa sulla traslazione di ogni lettera del testo in chiaro di un numero 
+                fisso di posizioni (detto <b>Chiave K</b>) nell'alfabeto.
+            </p>
+
+            <br style="clear: both;"> <!-- Clear float -->
+            
+            <div class="section-title">Modello Matematico</div>
+            
+            <p>
+                Matematicamente, se associamo ad ogni lettera un numero (A=0, B=1, ... Z=25), l'algoritmo di cifratura 
+                può essere espresso con l'aritmetica modulare:
+            </p>
+
+            <span class="formula-red">C = (P + K) mod 26</span>
+            
+            <p>Dove:</p>
+            <ul>
+                <li><b>C</b> è la lettera cifrata (Ciphertext).</li>
+                <li><b>P</b> è la lettera in chiaro (Plaintext).</li>
+                <li><b>K</b> è la chiave di scorrimento (Shift).</li>
+                <li><b>mod 26</b> garantisce che dopo la 'Z' si ricominci dalla 'A'.</li>
+            </ul>
+
+        </div>
+
+        <!-- SEZIONE 2: INTERATTIVA (Embedded nel PDF look-alike) -->
+        <div class="interactive-box">
+            <div class="section-title" style="margin-top:0;">AREA INTERATTIVA DI VERIFICA</div>
+            <p style="font-size:13px; font-style: italic;">
+                Utilizzare il simulatore sottostante per cifrare messaggi in tempo reale direttamente su questa scheda.
+            </p>
+
+            <table width="100%" cellpadding="5">
+                <tr>
+                    <td width="30%" align="right"><b>Messaggio (P):</b></td>
+                    <td><input type="text" id="sheetInput" value="AVE CESARE" onkeyup="calcolaSheet()"></td>
+                </tr>
+                <tr>
+                    <td align="right"><b>Chiave (K):</b></td>
+                    <td>
+                        <input type="range" id="sheetKey" min="1" max="25" value="3" style="width: 100px; vertical-align: middle;" oninput="calcolaSheet()">
+                        <span id="sheetKeyVal" style="font-weight:bold; font-size: 14px; margin-left: 10px;">3</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><b>Risultato (C):</b></td>
+                    <td><div id="sheetOutput" class="output-display">DYH FHVDUH</div></td>
+                </tr>
+            </table>
+
+        </div>
+
+        <!-- SEZIONE 3: DEBOLEZZE -->
+        <div class="content-area">
+            <div class="section-title">Analisi di Sicurezza</div>
+            
+
+
+            <p>
+                Nonostante la sua importanza storica, il Cifrario di Cesare è <b>estremamente debole</b> per gli standard moderni.
+                Poiché ci sono solo 25 chiavi possibili, un attaccante può facilmente decifrare il messaggio tentando tutte 
+                le combinazioni (attacco <b>Brute Force</b>).
+            </p>
+            <p>
+                Inoltre, non altera la distribuzione delle frequenze delle lettere: in un testo lungo in italiano, la lettera 
+                più frequente nel testo cifrato corrisponderà quasi sicuramente alla 'E' o alla 'A'.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <table class="footer-table">
+        <tr>
+            <td align="left">Classe QUINTA A Informatica</td>
+            <td align="center">Pagina 1</td>
+            <td align="right">Prof. SIRANGELO DANIELE</td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+    function calcolaSheet() {
+        const input = document.getElementById('sheetInput').value.toUpperCase();
+        const key = parseInt(document.getElementById('sheetKey').value);
+        document.getElementById('sheetKeyVal').innerText = key;
+        
+        let result = "";
+        for (let i = 0; i < input.length; i++) {
+            let code = input.charCodeAt(i);
+            if (code >= 65 && code <= 90) {
+                let shifted = ((code - 65 + key) % 26) + 65;
+                result += String.fromCharCode(shifted);
+            } else {
+                result += input[i];
+            }
+        }
+        document.getElementById('sheetOutput').innerText = result;
+    }
+    // Init
+    calcolaSheet();
+</script>
+
+</body>
+</html>
