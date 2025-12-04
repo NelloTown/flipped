@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemi e Reti | Flipped Classroom</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Google per un look professionale -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+
+    <!-- NAVIGAZIONE -->
+    <nav class="navbar">
+        <div class="logo">CRITTO.5A</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sicurezza">Sicurezza</a></li>
+            <li><a href="#definizioni">Cos'è</a></li>
+            <li><a href="#laboratorio">Lab</a></li>
+            <li><a href="#tipi">Tipi</a></li>
+            <li><a href="#analisi">Analisi</a></li>
+            <li><a href="#des">DES</a></li>
+        </ul>
+    </nav>
+
+    <!-- 1. HOME / INTRODUZIONE -->
+    <header id="home" class="hero-section">
+        <div class="container">
+            <div class="badge">Flipped Classroom</div>
+            <h1>LA CRITTOGRAFIA</h1>
+            <p class="subtitle">Sicurezza nelle reti: dalla teoria alla pratica.</p>
+            
+            <div class="team-box">
+                <h3>Gruppo di Lavoro</h3>
+                <ul class="team-list">
+                    <li>Antonio Bianco</li>
+                    <li>Leonardo Amoroso</li>
+                    <li>Mattia Algieri</li>
+                    <li>Giovanni Mazzei</li>
+                    <li>+ 1 Membro</li>
+                </ul>
+            </div>
+            
+            <div class="intro-box">
+                <p><strong>Benvenuti nel nostro sito di approfondimento.</strong><br>
+                Secondo il modello <em>Flipped Classroom</em>, abbiamo realizzato questo materiale per studiare a casa i concetti chiave, 
+                così in classe possiamo concentrarci sulla parte laboratoriale e pratica.</p>
+            </div>
+            
+            <a href="#sicurezza" class="btn-start">Inizia il Percorso</a>
+        </div>
+    </header>
+
+    <!-- 2. PERCHÉ LA SICUREZZA È IMPORTANTE -->
+    <section id="sicurezza" class="section-dark">
+        <div class="container">
+            <h2>2. La Sicurezza nelle Reti</h2>
+            <p class="intro-text">
+                Le reti non sono sicure. Strumenti come <strong>Wireshark</strong> permettono a malintenzionati di intercettare i dati (Sniffing).
+                Per proteggerci, dobbiamo garantire tre requisiti fondamentali (Triade CIA):
+            </p>
+
+            <div class="cards-container">
+                <div class="card">
+                    <div class="icon">🔒</div>
+                    <h3>Riservatezza</h3>
+                    <p>I dati devono restare segreti. Solo chi ha il diritto di vederli deve poter accedere al contenuto.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🆔</div>
+                    <h3>Autenticazione</h3>
+                    <p>Bisogna essere certi dell'identità di chi invia o riceve i dati. "Sei davvero chi dici di essere?"</p>
+                </div>
+                <div class="card">
+                    <div class="icon">✅</div>
+                    <h3>Integrità</h3>
+                    <p>I documenti devono essere autentici: non devono essere stati modificati da terzi durante il trasporto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. COS'È LA CRITTOGRAFIA -->
+    <section id="definizioni" class="section-blue">
+        <div class="container">
+            <h2>3. Cos'è la Crittografia?</h2>
+            <div class="content-grid">
+                <div class="text-column">
+                    <p>
+                        La crittografia è l'insieme delle tecniche per nascondere i messaggi. 
+                        Serve a trasformare un testo leggibile in uno incomprensibile a chi non è autorizzato.
+                    </p>
+                    <ul class="definitions-list">
+                        <li><strong>Plain Text (Testo in chiaro):</strong> Il messaggio originale leggibile.</li>
+                        <li><strong>Cipher Text (Testo cifrato):</strong> Il risultato illeggibile dopo la cifratura.</li>
+                        <li><strong>Algoritmo:</strong> La procedura matematica usata per trasformare i dati.</li>
+                        <li><strong>Chiave:</strong> Il parametro segreto (come una password) necessario per cifrare e decifrare.</li>
+                    </ul>
+                </div>
+                <div class="visual-column">
+                    <div class="flow-diagram">
+                        <span class="box-flow">Messaggio Chiaro</span>
+                        <span class="arrow-flow">➜</span>
+                        <span class="box-flow algorithm">Algoritmo + Chiave</span>
+                        <span class="arrow-flow">➜</span>
+                        <span class="box-flow encrypted">Messaggio Cifrato</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. LABORATORIO (CIFRARIO DI CESARE) -->
+    <section id="laboratorio" class="section-dark border-highlight">
+        <div class="container">
+            <h2>4. Laboratorio Pratico</h2>
+            <p class="lab-desc">
+                Proviamo subito! Ecco il <strong>Cifrario di Cesare</strong>, uno dei più antichi algoritmi simmetrici.
+                <br>Sposta la chiave e guarda come cambia il testo.
+            </p>
+
+            <div class="crypto-tool">
+                <div class="input-group">
+                    <label>1. Scrivi il messaggio (Plain Text)</label>
+                    <input type="text" id="inputText" placeholder="es. SISTEMI E RETI" oninput="calcolaCifratura()">
+                </div>
+
+                <div class="input-group">
+                    <label>2. Scegli la Chiave (Shift): <span id="chiaveValore">3</span></label>
+                    <input type="range" id="inputChiave" min="1" max="25" value="3" oninput="calcolaCifratura()">
+                </div>
+
+                <div class="arrow">⬇️ L'algoritmo lavora in tempo reale ⬇️</div>
+
+                <div class="input-group">
+                    <label>3. Risultato (Cipher Text)</label>
+                    <div id="outputText" class="result-box">VLVWHPL H UHWL</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TIPI DI CRITTOGRAFIA -->
+    <section id="tipi" class="section-blue">
+        <div class="container">
+            <h2>5. Simmetrica vs Asimmetrica</h2>
+            <p class="intro-text">Esistono due grandi famiglie di sistemi crittografici.</p>
+            
+            <div class="comparison-grid">
+                <div class="compare-box symmetric">
+                    <h3>Crittografia Simmetrica</h3>
+                    <div class="icon-small">🔑</div>
+                    <p><strong>Una sola chiave.</strong></p>
+                    <p>Mittente e destinatario usano la STESSA chiave segreta sia per cifrare che per decifrare.</p>
+                    <p class="pro-con">Veloce, ma bisogna scambiarsi la chiave prima (rischio intercettazione).</p>
+                </div>
+
+                <div class="compare-box asymmetric">
+                    <h3>Crittografia Asimmetrica</h3>
+                    <div class="icon-small">🔑 + 🔓</div>
+                    <p><strong>Due chiavi diverse.</strong></p>
+                    <ul class="sub-list">
+                        <li><strong>Chiave Pubblica:</strong> Nota a tutti, serve per cifrare.</li>
+                        <li><strong>Chiave Privata:</strong> Segreta, serve per decifrare.</li>
+                    </ul>
+                    <p class="pro-con">Più sicura (non serve scambio chiavi), ma più lenta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. LA CRITTOANALISI -->
+    <section id="analisi" class="section-dark">
+        <div class="container">
+            <h2>6. La Crittoanalisi</h2>
+            <p class="intro-text">
+                La crittoanalisi è lo studio per "rompere" i codici e scoprire la chiave segreta.
+            </p>
+
+            <div class="topic">
+                <h3>📜 Il Principio di Kerckhoffs</h3>
+                <p>
+                    Una regola d'oro della sicurezza: 
+                    <em>"La sicurezza di un sistema deve dipendere solo dalla segretezza della chiave, mai dalla segretezza dell'algoritmo."</em>
+                </p>
+                <p>
+                    Gli algoritmi devono essere pubblici così tutti possono testarli. Se l'algoritmo è segreto, non è sicuro.
+                </p>
+            </div>
+
+            <div class="topic">
+                <h3>🛡️ Il cifrario perfetto: One-Time Pad</h3>
+                <p>
+                    L'unico sistema matematicamente inviolabile.
+                    Usa una chiave casuale lunga quanto il messaggio, usata una sola volta (One-Time). 
+                    Oggi le banche usano un sistema simile con le password "usa e getta" (OTP).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. STANDARD STORICI: DES e 3-DES -->
+    <section id="des" class="section-blue">
+        <div class="container">
+            <h2>7. Il Cifrario DES e 3-DES</h2>
+            <div class="content-grid">
+                <div class="text-column">
+                    <h3>DES (Data Encryption Standard)</h3>
+                    <p>Sviluppato da IBM e diventato standard mondiale nel 1977. È un sistema <strong>simmetrico</strong>.</p>
+                    <ul>
+                        <li>Usa trasformazioni complesse (Sostituzioni e Trasposizioni).</li>
+                        <li><strong>Effetto Valanga:</strong> Basta cambiare 1 bit del messaggio per cambiare completamente il risultato cifrato.</li>
+                        <li><strong>Problema:</strong> Chiave a soli 56 bit. Oggi un PC potente lo viola in poche ore.</li>
+                    </ul>
+                </div>
+                <div class="text-column">
+                    <h3>Triple DES (3-DES)</h3>
+                    <p>La soluzione temporanea al problema del DES.</p>
+                    <ul>
+                        <li>Applica l'algoritmo DES <strong>tre volte</strong> di seguito.</li>
+                        <li>Usa chiavi diverse per ogni passaggio.</li>
+                        <li>Molto più sicuro (difficile da forzare), ma lento.</li>
+                        <li>Ancora usato in alcune transazioni bancarie (es. carte di credito).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Progetto Flipped Classroom - 5° Superiore - Sistemi e Reti</p>
+        <p>Realizzato da: Antonio Bianco, Leonardo Amoroso, Mattia Algieri, Giovanni Mazzei</p>
+    </footer>
+
+    <script src="script.js"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
